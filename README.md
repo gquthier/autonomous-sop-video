@@ -10,9 +10,9 @@ Real screens. A clear voice. The exact button to click.<br>
 Give your agent a workflow and get a chaptered tutorial for your team or your clients —<br>
 with the screenshots, zooms, captions, and checklist already in place.
 
-**[Watch the demo →](assets/demo.mp4)** · **[Install the skill](#install)** · **[Read the playbook](SKILL.md)**
+**[Install the skill](#install)** · **[Read the playbook](SKILL.md)**
 
-[![Preview of the white-and-blue SOP template, with synthetic interface](assets/preview.png)](assets/demo.mp4)
+![Meta access-sharing SOP with a highlighted button and a step-by-step checklist](assets/preview.png)
 
 <sub>Codex + Claude Code · dedicated producer agent · ElevenLabs or your own voice · white label · editable source · MIT</sub>
 
@@ -40,7 +40,7 @@ This skill gives a coding agent a production workflow for making those tutorials
 - **Make it yours.** White background, blue titles, restrained motion, and no agency logo by default. Use it for internal training or client-facing resources.
 - **Keep the source.** Change a screenshot or instruction when the software changes, then render again.
 
-The public **24-second French example is silent and uses clearly labeled synthetic UI**. It demonstrates the included template, not an actual software workflow. A real SOP uses verified captures and the narration you choose.
+The separate [24-second French template example](assets/demo.mp4) is silent and uses clearly labeled synthetic UI. It demonstrates the included template, not an actual software workflow. A real SOP uses verified captures and the narration you choose.
 
 ## What you get
 
@@ -146,7 +146,7 @@ The starter uses a single paused, seekable GSAP timeline. Targets are specified 
 
 ## Verification and limits
 
-The visual workflow was developed against a **5 min 06 French SOP** with real anonymized screenshots, stable narration, and 12 embedded chapters. Those private screenshots and the client tutorial are not included here.
+The visual workflow was developed against a **5 min 06 French SOP** with real anonymized screenshots, stable narration, and 12 embedded chapters. The header image is an approved anonymized still from the first pilot. The full client tutorial and raw captures are not included here.
 
 This public repository contains its own reproducible synthetic example. Run the tests and renderer check after changing the template. Automated checks help catch timing and structure errors; **a human or agent still needs to inspect the exported frames**. A screenshot does not prove an action was executed. The instructions keep those states distinct.
 
