@@ -1,0 +1,5 @@
+interface:
+  display_name: "SOP Video"
+  short_description: "Turn real workflows into narrated SOP videos"
+  brand_color: "#1565D8"
+  default_prompt: "Use $sop-video to produce a clear step-by-step tutorial with real screenshots, narration, button zooms, a side checklist, subtitles, and chapters."

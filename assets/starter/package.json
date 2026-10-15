@@ -1,0 +1,12 @@
+{
+  "name": "sop-video-project",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "npx --yes hyperframes@0.8.161 preview",
+    "check": "npx --yes hyperframes@0.8.161 check",
+    "render": "npx --yes hyperframes@0.8.161 render"
+  }
+}

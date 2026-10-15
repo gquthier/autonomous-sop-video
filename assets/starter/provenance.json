@@ -1,0 +1,42 @@
+{
+  "type": "synthetic-demo",
+  "description": "Original fictional project-management UI created for this reusable starter. No real account, customer, or software interface is depicted.",
+  "voice": {
+    "mode": "demo-silent",
+    "generated": false
+  },
+  "screenshots": [
+    {
+      "id": "demo-1",
+      "path": "assets/screenshots/demo-1.svg",
+      "width": 1440,
+      "height": 810,
+      "kind": "synthetic",
+      "source": "Original synthetic interface bundled with this starter; not a real software product.",
+      "capturedAt": "2026-10-15",
+      "redacted": true
+    },
+    {
+      "id": "demo-2",
+      "path": "assets/screenshots/demo-2.svg",
+      "width": 1440,
+      "height": 810,
+      "kind": "synthetic",
+      "source": "Original synthetic interface bundled with this starter; not a real software product.",
+      "capturedAt": "2026-10-15",
+      "redacted": true
+    },
+    {
+      "id": "demo-3",
+      "path": "assets/screenshots/demo-3.svg",
+      "width": 1440,
+      "height": 810,
+      "kind": "synthetic",
+      "source": "Original synthetic interface bundled with this starter; not a real software product.",
+      "capturedAt": "2026-10-15",
+      "redacted": true
+    }
+  ],
+  "observedRealActions": [],
+  "redactionRequired": false
+}

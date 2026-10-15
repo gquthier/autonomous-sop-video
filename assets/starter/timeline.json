@@ -1,0 +1,23 @@
+{
+  "duration": 24,
+  "steps": [
+    {
+      "id": "ouvrir",
+      "start": 0,
+      "duration": 8,
+      "chapter": "Ouvrir le menu"
+    },
+    {
+      "id": "nommer",
+      "start": 8,
+      "duration": 8,
+      "chapter": "Nommer le projet"
+    },
+    {
+      "id": "verifier",
+      "start": 16,
+      "duration": 8,
+      "chapter": "Contrôler le résultat"
+    }
+  ]
+}

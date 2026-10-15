@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "title": "Créer un projet — démonstration fictive",
+  "language": "fr",
+  "series": "EXEMPLE · CRÉER UN PROJET",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "narration": {
+    "mode": "demo-silent",
+    "note": "Aucune voix générée. Remplacer par provided, elevenlabs ou native pour une production narrée."
+  },
+  "screenshots": [
+    {
+      "id": "demo-1",
+      "path": "assets/screenshots/demo-1.svg",
+      "width": 1440,
+      "height": 810,
+      "kind": "synthetic",
+      "source": "Original synthetic interface bundled with this starter; not a real software product.",
+      "capturedAt": "2026-10-15",
+      "redacted": true
+    },
+    {
+      "id": "demo-2",
+      "path": "assets/screenshots/demo-2.svg",
+      "width": 1440,
+      "height": 810,
+      "kind": "synthetic",
+      "source": "Original synthetic interface bundled with this starter; not a real software product.",
+      "capturedAt": "2026-10-15",
+      "redacted": true
+    },
+    {
+      "id": "demo-3",
+      "path": "assets/screenshots/demo-3.svg",
+      "width": 1440,
+      "height": 810,
+      "kind": "synthetic",
+      "source": "Original synthetic interface bundled with this starter; not a real software product.",
+      "capturedAt": "2026-10-15",
+      "redacted": true
+    }
+  ],
+  "steps": [
+    {
+      "id": "ouvrir",
+      "title": "Ouvrir la création de projet",
+      "instruction": "Repérez le bouton « Nouveau projet ».",
+      "chapter": "Ouvrir le menu",
+      "target": {
+        "x": 1100,
+        "y": 121,
+        "width": 276,
+        "height": 62
+      },
+      "checklist": [
+        {
+          "text": "Ouvrir la section Projets",
+          "state": "done"
+        },
+        {
+          "text": "Repérer Nouveau projet",
+          "state": "current"
+        },
+        {
+          "text": "Préparer un nom explicite",
+          "state": "todo"
+        }
+      ],
+      "duration": 8,
+      "screenshot": "demo-1",
+      "zoom": 1.7,
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 7.7,
+          "text": "Dans cet exemple fictif, ouvrez la section Projets, puis repérez Nouveau projet."
+        }
+      ]
+    },
+    {
+      "id": "nommer",
+      "title": "Nommer et enregistrer",
+      "instruction": "Relisez le nom avant de valider.",
+      "chapter": "Nommer le projet",
+      "target": {
+        "x": 1065,
+        "y": 510,
+        "width": 249,
+        "height": 64
+      },
+      "checklist": [
+        {
+          "text": "Saisir un nom de projet",
+          "state": "done"
+        },
+        {
+          "text": "Relire le nom choisi",
+          "state": "done"
+        },
+        {
+          "text": "Cliquer sur Enregistrer",
+          "state": "current"
+        }
+      ],
+      "duration": 8,
+      "screenshot": "demo-2",
+      "zoom": 1.3,
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 7.7,
+          "text": "Le nom est saisi. Vérifiez-le, puis utilisez le bouton Enregistrer."
+        }
+      ]
+    },
+    {
+      "id": "verifier",
+      "title": "Vérifier que le projet existe",
+      "instruction": "Retrouvez le même nom dans la liste.",
+      "chapter": "Contrôler le résultat",
+      "target": {
+        "x": 304,
+        "y": 390,
+        "width": 1072,
+        "height": 115
+      },
+      "checklist": [
+        {
+          "text": "Lire le message de confirmation",
+          "state": "done"
+        },
+        {
+          "text": "Retrouver Guide de bienvenue",
+          "state": "current"
+        },
+        {
+          "text": "Ouvrir le projet si nécessaire",
+          "state": "todo"
+        }
+      ],
+      "duration": 8,
+      "screenshot": "demo-3",
+      "zoom": 1.3,
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 7.7,
+          "text": "Le message Projet créé et la ligne Guide de bienvenue confirment le résultat."
+        }
+      ]
+    }
+  ]
+}

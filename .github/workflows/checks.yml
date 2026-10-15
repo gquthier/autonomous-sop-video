@@ -1,0 +1,26 @@
+name: Check skill and starter
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install media tools
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - name: Run functional tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Validate example assets and timeline
+        run: python3 scripts/sop.py validate assets/starter/sop.json --probe
+      - name: Check JavaScript syntax
+        run: node --check assets/starter/build.mjs

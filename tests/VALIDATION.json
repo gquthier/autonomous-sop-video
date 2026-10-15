@@ -1,0 +1,91 @@
+{
+  "verifiedAt": "2026-10-15",
+  "scope": "Bundled synthetic starter and deterministic helper; not a real software SOP or a TTS service test.",
+  "skillValidation": "skill-creator quick_validate: valid",
+  "functionalTests": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "passed": 12,
+    "skipped": 0,
+    "coverage": [
+      "native image dimensions",
+      "target rectangle bounds",
+      "duplicate IDs",
+      "asset traversal and symlink escape",
+      "caption overlap and scene bounds",
+      "voice requirement and measured duration",
+      "voice clipping",
+      "caption/chapter timeline consistency",
+      "safe init refusal",
+      "real FFmpeg MP4 chapter embedding and ffprobe readback",
+      "Node generator assets and timing"
+    ]
+  },
+  "renderer": {
+    "name": "HyperFrames",
+    "version": "0.8.161",
+    "runtimeErrors": 0,
+    "layoutErrors": 0,
+    "contrastPassed": 70,
+    "contrastChecked": 70,
+    "lintErrors": 0,
+    "lintWarnings": 3,
+    "warningExplanation": "Flat three-scene starter: nested_structure_needs_subcomposition recommends separate scene files for timeline editing. Rendering and playback timing passed; no blanket lint suppression.",
+    "browserAuditSkipped": false,
+    "motionSidecarAssertions": false
+  },
+  "visualReview": {
+    "sourceSnapshotsSeconds": [
+      0.8,
+      2.5,
+      7.5,
+      8.8,
+      9.5,
+      10.2,
+      15.5,
+      18.5,
+      23.8
+    ],
+    "finalDecodedFramesSeconds": [
+      10.2
+    ],
+    "result": "Original three-scene review supplemented after the independent forward test: scene 2 zoom reduced from 1.7x to 1.3x; full project name and Save button visible together at 8.8s, 9.5s, 10.2s, and 15.5s. New MP4 decoded at 10.2s confirms the correction. Other scenes are unchanged."
+  },
+  "render": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 720,
+    "durationSeconds": 24,
+    "audio": "none; explicitly silent demo",
+    "chapterStartsSeconds": [
+      0,
+      8,
+      16
+    ],
+    "chapterEndSeconds": 24,
+    "bytes": 7847555,
+    "sha256": "df2110119a57fb01ca603b41a7e60a4d198514f2b0269fd3ec7d87c3e0742814",
+    "captureMode": "drawelement",
+    "gpuMode": "hardware",
+    "renderSeconds": 16.0
+  },
+  "externalServices": {
+    "ttsRequests": 0,
+    "realAccountMutations": 0,
+    "publicUploadsByHelper": 0
+  },
+  "limits": [
+    "Runtime behavior depends on installed renderer/browser versions; the pin is intentional.",
+    "Manifest validation does not prove real UI correctness or anonymization.",
+    "No ElevenLabs or native TTS call was made for this synthetic silent demo.",
+    "No continuous-video editing helper or microphone recorder is included.",
+    "Chapter navigation depends on the player; sidecar VTT/TXT is retained."
+  ],
+  "forwardTest": {
+    "finding": "Scene 2 previously cropped the name that the learner was asked to reread.",
+    "fix": "Only scene 2 zoom reduced from 1.7 to 1.3.",
+    "independentVisualRetest": "Passed on source snapshot at 10.2s; full name and Save button simultaneously readable.",
+    "mp4Retest": "Producer inspected decoded final MP4 at 10.2s after rerender."
+  }
+}

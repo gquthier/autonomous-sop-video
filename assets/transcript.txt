@@ -1,0 +1,10 @@
+Exemple synthétique — démonstration silencieuse du modèle SOP.
+
+Ouvrir le menu
+Dans cet exemple fictif, ouvrez la section Projets, puis repérez Nouveau projet.
+
+Nommer le projet
+Le nom est saisi. Vérifiez-le, puis utilisez le bouton Enregistrer.
+
+Contrôler le résultat
+Le message Projet créé et la ligne Guide de bienvenue confirment le résultat.
