@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "dependencies": {
+    "gsap": "3.12.7"
+  },
   "scripts": {
+    "preflight": "node build.mjs --preflight",
+    "test": "node --test build.test.mjs",
     "build": "node build.mjs",
     "preview": "npx --yes hyperframes@0.8.161 preview",
     "check": "npx --yes hyperframes@0.8.161 check",
