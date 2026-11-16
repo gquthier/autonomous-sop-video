@@ -78,30 +78,32 @@ Or:
 
 > Crée une SOP en français pour montrer à un client comment partager l’accès à son compte publicitaire. Utilise les écrans actuels, une voix française ElevenLabs stable, et montre précisément les boutons. Fais une seule vidéo pilote pour mon feedback.
 
-The producer role is defined in [agents/producer.md](agents/producer.md). A runtime with delegation can assign it to a dedicated agent; a runtime without delegation can perform the same role directly. The skill does not silently install an autonomous background service.
+The producer role is defined in [agents/producer.md](agents/producer.md). A runtime with delegation can assign it to a dedicated agent; a runtime without delegation can perform the same role directly.
 
 ## Quickstart
 
-Try the runnable example without a voice API. You need **Python 3.10+, Node.js 22+, FFmpeg/ffprobe**, and a Chrome version supported by [HyperFrames](https://hyperframes.heygen.com). The first build downloads GSAP; `npx` fetches the pinned renderer. Renderer and provider services have their own terms and possible usage costs.
+Try the runnable example without a voice API. You need **Python 3.10+, Node.js 22+, FFmpeg/ffprobe**, and a Chrome version supported by [HyperFrames](https://hyperframes.heygen.com). Install the locked local GSAP dependency explicitly before building. The pin, integrity check, and third-party terms are in the [third-party notices](assets/starter/THIRD_PARTY.md). `npx` may fetch the pinned renderer and its browser dependencies. For offline preparation, all required packages and browser binaries must already be cached; add `--offline` to `npm ci` to prohibit package downloads. Renderer, GSAP, and provider services can have their own usage costs.
 
 From the cloned skill directory:
 
 ```bash
 python3 scripts/sop.py init /tmp/my-first-sop
 cd /tmp/my-first-sop
+npm ci --ignore-scripts --no-audit --no-fund
 node build.mjs
 npm run check
-npm run preview -- --background
+npm run preview  # optional interactive preview; stop it when finished
 npm run render -- --quality delivery --output renders/video.mp4 --workers 1
 ```
 
-Use a new, empty destination; `init` will not overwrite an existing project. Add `--gpu` to the render command only when your environment supports it.
+Add `--gpu` to the render command only when your environment supports it.
 
 Export captions and chapters, then embed the chapters in the video:
 
 ```bash
 # Set this to your installed skill directory.
-SKILL_DIR="$HOME/.codex/skills/sop-video"
+# Example for the shared agents installation; use the path actually installed.
+SKILL_DIR="$HOME/.agents/skills/sop-video"
 
 python3 "$SKILL_DIR/scripts/sop.py" validate sop.json --probe
 python3 "$SKILL_DIR/scripts/sop.py" chapters sop.json --output delivery
@@ -109,24 +111,13 @@ python3 "$SKILL_DIR/scripts/sop.py" embed \
   renders/video.mp4 delivery/chapters.ffmetadata delivery/video.mp4
 ```
 
-The helper copies the video streams without re-encoding. It refuses to overwrite an existing output.
-
 ## From a real workflow to a finished video
 
-1. **Define the result.** Audience, task, prerequisites, language, voice, and what “done” looks like.
-2. **Observe and capture.** Record real screens, dates, native image sizes, and button coordinates. Remove private data from the pixels before export.
-3. **Write and voice.** Explain one action at a time. Generate or use the narration, measure the audio, and build scenes to fit it.
-4. **Compose.** Keep the screenshot large, the checklist on the right, and the relevant control readable during each zoom.
-5. **Verify.** Validate timing and assets, run the renderer checks, inspect each scene, and check the final encoded video.
-6. **Deliver.** Export the MP4, captions, chapters, editable source, and a short QA report. Stop at one pilot when that is the requested scope.
+Follow the procedure in [SKILL.md](SKILL.md). The example prompts above are sample requests. The bundled example and the original pilot are French; captions and chapters use the narration timeline.
 
 ## Voice and model choice
 
-**Voice:** ElevenLabs, a supported native narration tool, or an authorized recording you provide. Keep the chosen voice, model, and settings consistent across a series. The included helper handles assets and timing; the agent uses your available provider tools for synthesis. API keys stay in your local environment and out of the repository.
-
-**Motion:** a capable coding model writes the HTML/GSAP composition, which HyperFrames renders. The playbook prefers your requested model, checks that it actually exists in your runtime, tests a representative scene, and records the actual model and reported usage. Opus-family models are supported through an available runtime; there is no hardcoded “best model” claim or invented model alias. Read [model selection](references/models.md).
-
-**Languages:** the agent follows your brief. The example and the original pilot are French. Captions and chapters use the same timeline as the final narration.
+Narration routes are in [capture and audio](references/capture-and-audio.md#narration-modes). Model selection is in [model selection](references/models.md).
 
 ## Inside the repository
 
@@ -142,13 +133,13 @@ assets/demo.mp4              Rendered public example with embedded chapters
 assets/preview.png           Preview for this README
 ```
 
-The starter uses a single paused, seekable GSAP timeline. Targets are specified in the screenshot’s native coordinates; the builder computes the camera movement. The validator checks image dimensions, target bounds, voice durations, caption overlap, and project-relative assets. See the [manifest reference](references/manifest.md).
+See the [manifest reference](references/manifest.md) and the [production reference](references/production.md).
 
 ## Verification and limits
 
 The visual workflow was developed against a **5 min 06 French SOP** with real anonymized screenshots, stable narration, and 12 embedded chapters. The header image is an approved anonymized still from the first pilot. The full client tutorial and raw captures are not included here.
 
-This public repository contains its own reproducible synthetic example. Run the tests and renderer check after changing the template. Automated checks help catch timing and structure errors; **a human or agent still needs to inspect the exported frames**. A screenshot does not prove an action was executed. The instructions keep those states distinct.
+This public repository contains a synthetic example. Run the tests and renderer check after changing the template. The bundled [validation record](tests/VALIDATION.json) records the current pressure test: 23 Python and 32 Node tests, a newly rendered 24-second demo, chapter readback, and ten inspected decoded frames including all scene starts. The browser audit has zero errors and three documented structure warnings; motion assertions were disabled. That record covers a synthetic silent composition. Each real delivery uses the [release gates](references/production.md#release-gates-fail-closed).
 
 ## Contribute
 
